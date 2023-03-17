@@ -130,7 +130,7 @@ print(path)
 
 path = nx.shortest_path(G, source=startPoint, target=endPoint)
 
-# แสดงกราฟที่ระบุเส้นทางแล้ว (หมายเหตุไม่กำหนดระยะทาง)
+# แสดงกราฟที่ระบุเส้นทางแล้ว
 pos = nx.spring_layout(G)
 nx.draw(G, pos, with_labels=True, edge_color='gray')  # ให้สีเส้นเป็นสีเทา
 labels = nx.get_edge_attributes(G,'weight')
