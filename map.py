@@ -1,7 +1,6 @@
 import networkx as nx
 import matplotlib.pyplot as plt
 
-
 # สร้างกราฟว่าง
 G = nx.Graph()
 
@@ -136,6 +135,7 @@ pos = nx.spring_layout(G)
 nx.draw(G, pos, with_labels=True, edge_color='gray')  # ให้สีเส้นเป็นสีเทา
 labels = nx.get_edge_attributes(G,'weight')
 nx.draw_networkx_edge_labels(G,pos,edge_labels=labels)
+
 # เปลี่ยนสีของเส้นทางที่ผ่านไปทั้งหมดใน path เป็นสีแดง
 for i in range(len(path)-1):
     nx.draw_networkx_edges(G, pos, edgelist=[(path[i], path[i+1])], edge_color='red', width=2.0)
