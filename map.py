@@ -1,6 +1,7 @@
 import networkx as nx
 import matplotlib.pyplot as plt
 
+
 # สร้างกราฟว่าง
 G = nx.Graph()
 
@@ -84,7 +85,7 @@ G.add_edge('13', '14')
 
 G.add_edge('14', '10')
 G.add_edge('14', '13')
-G.add_edge('14', '17')
+G.add_edge('14', '15')
 G.add_edge('14', '21')
 
 G.add_edge('15', '8')
@@ -113,10 +114,6 @@ G.add_edge('21', '14')
 G.add_edge('21', '18')
 G.add_edge('21', '19')
 
-# ระบุจุดจากที่หนึ่งไปยังอีกที่ว่าผ่านจุดใดบ้าง
-path = nx.shortest_path(G, '1', '14')
-print(path)
-
 # แสดงกราฟ
 pos = nx.spring_layout(G)
 nx.draw(G, pos, with_labels=True)
@@ -124,5 +121,22 @@ labels = nx.get_edge_attributes(G,'weight')
 nx.draw_networkx_edge_labels(G,pos,edge_labels=labels)
 plt.show()
 
-path = nx.shortest_path(G, '1', '14')
+# ระบุจุดเริ่มและสิ้นสุด
+startPoint = str(input("Enter start point:"))
+endPoint = str(input("Enter end point:"))
+
+# ระบุจุดจากที่หนึ่งไปยังอีกที่ว่าผ่านจุดใดบ้าง
+path = nx.shortest_path(G, startPoint, endPoint)
 print(path)
+
+path = nx.shortest_path(G, source=startPoint, target=endPoint)
+
+# แสดงกราฟที่ระบุเส้นทางแล้ว (หมายเหตุไม่กำหนดระยะทาง)
+pos = nx.spring_layout(G)
+nx.draw(G, pos, with_labels=True, edge_color='gray')  # ให้สีเส้นเป็นสีเทา
+labels = nx.get_edge_attributes(G,'weight')
+nx.draw_networkx_edge_labels(G,pos,edge_labels=labels)
+# เปลี่ยนสีของเส้นทางที่ผ่านไปทั้งหมดใน path เป็นสีแดง
+for i in range(len(path)-1):
+    nx.draw_networkx_edges(G, pos, edgelist=[(path[i], path[i+1])], edge_color='red', width=2.0)
+plt.show()
