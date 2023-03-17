@@ -30,7 +30,92 @@ G.add_node('21')
 # เพิ่ม edge ลงในกราฟ
 G.add_edge('1', '2')#, weight=4
 G.add_edge('1', '3')
+G.add_edge('1', '18')
+
+G.add_edge('2', '1')
 G.add_edge('2', '3')
+G.add_edge('2', '4')
+G.add_edge('2', '16')
+G.add_edge('2', '17')
+G.add_edge('2', '18')
+
+G.add_edge('3', '1')
+G.add_edge('3', '2')
+G.add_edge('3', '4')
+G.add_edge('3', '5')
+
+G.add_edge('4', '2')
+G.add_edge('4', '3')
+G.add_edge('4', '5')
+
+G.add_edge('5', '3')
+G.add_edge('5', '4')
+G.add_edge('5', '6')
+
+G.add_edge('6', '7')
+
+G.add_edge('7', '8')
+G.add_edge('7', '9')
+G.add_edge('7', '12')
+
+G.add_edge('8', '7')
+G.add_edge('8', '15')
+
+G.add_edge('9', '7')
+G.add_edge('9', '10')
+G.add_edge('9', '11')
+G.add_edge('9', '12')
+
+G.add_edge('10', '9')
+G.add_edge('10', '11')
+G.add_edge('10', '13')
+G.add_edge('10', '14')
+
+G.add_edge('11', '9')
+G.add_edge('11', '10')
+G.add_edge('11', '13')
+
+G.add_edge('12', '7')
+G.add_edge('12', '9')
+
+G.add_edge('13', '10')
+G.add_edge('13', '11')
+G.add_edge('13', '14')
+
+G.add_edge('14', '10')
+G.add_edge('14', '13')
+G.add_edge('14', '17')
+G.add_edge('14', '21')
+
+G.add_edge('15', '8')
+G.add_edge('15', '14')
+G.add_edge('15', '16')
+
+G.add_edge('16', '2')
+G.add_edge('16', '15')
+
+G.add_edge('17', '2')
+G.add_edge('17', '18')
+
+G.add_edge('18', '1')
+G.add_edge('18', '2')
+G.add_edge('18', '17')
+G.add_edge('18', '19')
+G.add_edge('18', '21')
+
+G.add_edge('19', '18')
+G.add_edge('19', '20')
+G.add_edge('19', '21')
+
+G.add_edge('20', '19')
+
+G.add_edge('21', '14')
+G.add_edge('21', '18')
+G.add_edge('21', '19')
+
+# ระบุจุดจากที่หนึ่งไปยังอีกที่ว่าผ่านจุดใดบ้าง
+path = nx.shortest_path(G, '1', '14')
+print(path)
 
 # แสดงกราฟ
 pos = nx.spring_layout(G)
@@ -38,3 +123,6 @@ nx.draw(G, pos, with_labels=True)
 labels = nx.get_edge_attributes(G,'weight')
 nx.draw_networkx_edge_labels(G,pos,edge_labels=labels)
 plt.show()
+
+path = nx.shortest_path(G, '1', '14')
+print(path)
