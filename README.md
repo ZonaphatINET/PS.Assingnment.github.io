@@ -1,1 +1,1 @@
-# PS.Assingnment.github.io
+# Problem-Solving-Assingnment.github.io
