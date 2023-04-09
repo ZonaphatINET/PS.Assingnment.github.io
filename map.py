@@ -34,14 +34,14 @@ G.add_node('NakhonRatchasima')
 G.add_node('NakhonNayok')
 
 # เพิ่ม edge ลงในกราฟ
-G.add_edge(1, 2, weight = 4)#, weight=4
-G.add_edge(1, 3, weight = 10)
-G.add_edge(1, 18)
+G.add_edge(1, 2, weight = 58)#, weight=4
+G.add_edge(1, 3, weight = 62)
+G.add_edge(1, 18, weight = 54)
 
 G.add_edge(2, 1)
-G.add_edge(2, 3)
+G.add_edge(2, 3, weight = 10)
 G.add_edge(2, 4)
-G.add_edge(2, 16)
+G.add_edge(2, 16, weight = 49)
 G.add_edge(2, 17)
 G.add_edge(2, 18)
 
@@ -50,74 +50,74 @@ G.add_edge(3, 2)
 G.add_edge(3, 4)
 G.add_edge(3, 5)
 
-G.add_edge(4, 2)
-G.add_edge(4, 3)
+G.add_edge(4, 2, weight = 30)
+G.add_edge(4, 3, weight = 27)
 G.add_edge(4, 5)
 
-G.add_edge(5, 3)
-G.add_edge(5, 4)
-G.add_edge(5, 6)
+G.add_edge(5, 3, weight = 78)
+G.add_edge(5, 4, weight = 69)
+G.add_edge(5, 6, weight = 17)
 
-G.add_edge(6, 7)
+G.add_edge(6, 7, weight = 26)
 
 G.add_edge(7, 8)
 G.add_edge(7, 9)
 G.add_edge(7, 12)
 
-G.add_edge(8, 7)
+G.add_edge(8, 7, weight = 42)
 G.add_edge(8, 15)
 
-G.add_edge(9, 7)
+G.add_edge(9, 7, weight = 34)
 G.add_edge(9, 10)
 G.add_edge(9, 11)
 G.add_edge(9, 12)
 
-G.add_edge(10, 9)
+G.add_edge(10, 9, weight = 46)
 G.add_edge(10, 11)
 G.add_edge(10, 13)
 G.add_edge(10, 14)
 
-G.add_edge(11, 9)
-G.add_edge(11, 10)
+G.add_edge(11, 9, weight = 60)
+G.add_edge(11, 10, weight = 74)
 G.add_edge(11, 13)
 
-G.add_edge(12, 7)
-G.add_edge(12, 9)
+G.add_edge(12, 7, weight = 153)
+G.add_edge(12, 9, weight = 120)
 
-G.add_edge(13, 10)
-G.add_edge(13, 11)
-G.add_edge(13, 14)
+G.add_edge(13, 10, weight = 64)
+G.add_edge(13, 11, weight = 56)
+G.add_edge(13, 14, weight = 58)
 
-G.add_edge(14, 10)
-G.add_edge(14, 13)
+G.add_edge(14, 10, weight = 60)
+G.add_edge(14, 13, weight = 58)
 G.add_edge(14, 15)
 G.add_edge(14, 21)
 
-G.add_edge(15, 8)
-G.add_edge(15, 14)
+G.add_edge(15, 8, weight = 32)
+G.add_edge(15, 14, weight = 23)
 G.add_edge(15, 16)
 
 G.add_edge(16, 2)
-G.add_edge(16, 15)
+G.add_edge(16, 15, weight = 32)
 
-G.add_edge(17, 2)
+G.add_edge(17, 2, weight = 20)
 G.add_edge(17, 18)
 
 G.add_edge(18, 1)
-G.add_edge(18, 2)
-G.add_edge(18, 17)
+G.add_edge(18, 2, weight = 36)
+G.add_edge(18, 17, weight = 25)
 G.add_edge(18, 19)
 G.add_edge(18, 21)
 
-G.add_edge(19, 18)
+G.add_edge(19, 18, weight = 13)
 G.add_edge(19, 20)
 G.add_edge(19, 21)
 
-G.add_edge(20, 19)
+G.add_edge(20, 19, weight = 10)
 
-G.add_edge(21, 14)
-G.add_edge(21, 18)
-G.add_edge(21, 19)
+G.add_edge(21, 14, weight = 78)
+G.add_edge(21, 18, weight = 41)
+G.add_edge(21, 19, weight = 40)
 
 # กำหนดสีของโหนด
 color_map = {1:'pink',
@@ -167,7 +167,7 @@ pos = {1: (-3.18, -3.74),
         9: (0.33, 5.43),
          10: (-0.426, 6.12),
           11: (0.38, 9),
-           12: (1.44, 4.50),
+           12: (1.8, 4.50),
             13: (-1.56, 8.4),
              14: (-2.5, 6),
               15: (-0.76, 4.09),
@@ -211,7 +211,7 @@ pos = {1: (-3.18, -3.74),
         9: (0.33, 5.43),
          10: (-0.426, 6.12),
           11: (0.38, 9),
-           12: (1.44, 4.50),
+           12: (1.8, 4.50),
             13: (-1.56, 8.4),
              14: (-2.5, 6),
               15: (-0.76, 4.09),
