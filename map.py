@@ -41,7 +41,7 @@ G.add_edge(1, 18, weight = 54)
 G.add_edge(2, 1)
 G.add_edge(2, 3, weight = 10)
 G.add_edge(2, 4)
-G.add_edge(2, 16, weight = 54)#เนื่องจากเป็นเส้นทางขึ้นเขาใช้ความเร็วได้ไม่เต็มที่จึงบวกเพิ่ม 5 กม. 
+G.add_edge(2, 16, weight = 54)# เนื่องจากเป็นเส้นทางขึ้นเขาใช้ความเร็วได้ไม่เต็มที่จึงบวกเพิ่ม 5 กม. 
 G.add_edge(2, 17)
 G.add_edge(2, 18)
 
@@ -98,7 +98,7 @@ G.add_edge(15, 14, weight = 23)
 G.add_edge(15, 16)
 
 G.add_edge(16, 2)
-G.add_edge(16, 15, weight = 37)#เนื่องจากเป็นเส้นทางขึ้นเขาใช้ความเร็วได้ไม่เต็มที่จึงบวกเพิ่ม 5 กม. 
+G.add_edge(16, 15, weight = 37)# เนื่องจากเป็นเส้นทางขึ้นเขาใช้ความเร็วได้ไม่เต็มที่จึงบวกเพิ่ม 5 กม. 
 
 G.add_edge(17, 2, weight = 20)
 G.add_edge(17, 18)
@@ -184,7 +184,9 @@ pos = {1: (-3.18, -3.74),
 nx.draw(G, pos, with_labels=True, node_color=[color_map[node] for node in G.nodes()])
 labels = nx.get_edge_attributes(G,'weight')
 nx.draw_networkx_edge_labels(G,pos,edge_labels=labels)
-plt.show()
+#plt.show()
+
+
 
 # ระบุจุดเริ่มและสิ้นสุด
 startPoint = int(input("Enter start point:"))
@@ -242,5 +244,5 @@ filepath = 'img/outputMap/graph.png'
 # บันทึกภาพกราฟลงไปยังโฟลเดอร์ที่กำหนด
 plt.savefig(filepath, format='jpeg', dpi=1000)
 
-#plt.savefig("graph.jpg", format='jpeg', dpi=600)
-plt.show()
+#plt.savefig("graph.jpg", format='jpeg', dpi=600)#######ไม่ได้ใช้
+#plt.show()
