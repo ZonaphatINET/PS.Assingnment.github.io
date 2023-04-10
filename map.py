@@ -41,7 +41,7 @@ G.add_edge(1, 18, weight = 54)
 G.add_edge(2, 1)
 G.add_edge(2, 3, weight = 10)
 G.add_edge(2, 4)
-G.add_edge(2, 16, weight = 49)
+G.add_edge(2, 16, weight = 54)#เนื่องจากเป็นเส้นทางขึ้นเขาใช้ความเร็วได้ไม่เต็มที่จึงบวกเพิ่ม 5 กม. 
 G.add_edge(2, 17)
 G.add_edge(2, 18)
 
@@ -98,7 +98,7 @@ G.add_edge(15, 14, weight = 23)
 G.add_edge(15, 16)
 
 G.add_edge(16, 2)
-G.add_edge(16, 15, weight = 32)
+G.add_edge(16, 15, weight = 37)#เนื่องจากเป็นเส้นทางขึ้นเขาใช้ความเร็วได้ไม่เต็มที่จึงบวกเพิ่ม 5 กม. 
 
 G.add_edge(17, 2, weight = 20)
 G.add_edge(17, 18)
@@ -155,19 +155,19 @@ for node in G.nodes():
 # แสดงกราฟ
 pos = nx.spring_layout(G)
 
-    # กำหนดตำแหน่งของโหนด
+# กำหนดตำแหน่งของโหนด
 pos = {1: (-3.18, -3.74),
  2: (-1.7, 0.28),
-  3: (-1.03, -1.14),
-   4: (-1, 0.86),
-    5: (0.586, 0.15),
-     6: (0.852, 1.93),
-      7: (0.75, 3.4),
-       8: (0.05, 3.68),
-        9: (0.33, 5.43),
+  3: (-0.03, -1.14),
+   4: (-0, 0.86),
+    5: (2.586, 0.15),
+     6: (2.852, 1.93),
+      7: (2.75, 3.4),
+       8: (1.05, 3.68),
+        9: (1.33, 5.43),
          10: (-0.426, 6.12),
           11: (0.38, 9),
-           12: (1.8, 4.50),
+           12: (4.8, 4.50),
             13: (-1.56, 8.4),
              14: (-2.5, 6),
               15: (-0.76, 4.09),
@@ -177,9 +177,9 @@ pos = {1: (-3.18, -3.74),
                   19: (-3.84, 2.46),
                    20: (-4.01, 4.37),
                     21: (-5.42, 7.36),
-                    'PrachinBuri':(0.45, -3),
-                    'NakhonRatchasima':(0.45, -4),
-                    'NakhonNayok':(0.45, -5)}
+                    'PrachinBuri':(.5, -2),
+                    'NakhonRatchasima':(.50, -3),
+                    'NakhonNayok':(0.5, -4)}
 
 nx.draw(G, pos, with_labels=True, node_color=[color_map[node] for node in G.nodes()])
 labels = nx.get_edge_attributes(G,'weight')
@@ -191,27 +191,27 @@ startPoint = int(input("Enter start point:"))
 endPoint = int(input("Enter end point:"))
 
 # ระบุจุดจากที่หนึ่งไปยังอีกที่ว่าผ่านจุดใดบ้าง
-path = nx.shortest_path(G, startPoint, endPoint)
+path = nx.shortest_path(G, startPoint, endPoint, weight='weight')
 print(path)
 
-path = nx.shortest_path(G, source=startPoint, target=endPoint)
+path = nx.shortest_path(G, source=startPoint, target=endPoint, weight='weight')
 
 # แสดงกราฟที่ระบุเส้นทางแล้ว
 pos = nx.spring_layout(G)
 
- # กำหนดตำแหน่งของโหนด
+# กำหนดตำแหน่งของโหนด
 pos = {1: (-3.18, -3.74),
  2: (-1.7, 0.28),
-  3: (-1.03, -1.14),
-   4: (-1, 0.86),
-    5: (0.586, 0.15),
-     6: (0.852, 1.93),
-      7: (0.75, 3.4),
-       8: (0.05, 3.68),
-        9: (0.33, 5.43),
+  3: (-0.03, -1.14),
+   4: (-0, 0.86),
+    5: (2.586, 0.15),
+     6: (2.852, 1.93),
+      7: (2.75, 3.4),
+       8: (1.05, 3.68),
+        9: (1.33, 5.43),
          10: (-0.426, 6.12),
           11: (0.38, 9),
-           12: (1.8, 4.50),
+           12: (4.8, 4.50),
             13: (-1.56, 8.4),
              14: (-2.5, 6),
               15: (-0.76, 4.09),
@@ -221,11 +221,11 @@ pos = {1: (-3.18, -3.74),
                   19: (-3.84, 2.46),
                    20: (-4.01, 4.37),
                     21: (-5.42, 7.36),
-                    'PrachinBuri':(0.45, -3),
-                    'NakhonRatchasima':(0.45, -4),
-                    'NakhonNayok':(0.45, -5)}
+                    'PrachinBuri':(.5, -2),
+                    'NakhonRatchasima':(.50, -3),
+                    'NakhonNayok':(0.5, -4)}
 
-#หัวข้อกราฟ
+# หัวข้อกราฟ
 plt.title('Tent sites in 3 provinces: PrachinBuri, NakhonRatchasima, and NakhonNayok.', size=10)
 
 nx.draw(G, pos, with_labels=True, edge_color='gray', node_color=[color_map[node] for node in G.nodes()])  # ให้สีเส้นเป็นสีเทา
@@ -234,6 +234,13 @@ nx.draw_networkx_edge_labels(G,pos,edge_labels=labels)
 
 # เปลี่ยนสีของเส้นทางที่ผ่านไปทั้งหมดใน path เป็นสีแดง
 for i in range(len(path)-1):
-    nx.draw_networkx_edges(G, pos, edgelist=[(path[i], path[i+1])], edge_color='red', width=2.0)    
-plt.savefig("graph.jpg", format='jpeg', dpi=600)
+    nx.draw_networkx_edges(G, pos, edgelist=[(path[i], path[i+1])], edge_color='red', width=2.0)  
+
+# กำหนด path และชื่อไฟล์ที่ต้องการบันทึก    
+filepath = 'img/outputMap/graph.png'
+
+# บันทึกภาพกราฟลงไปยังโฟลเดอร์ที่กำหนด
+plt.savefig(filepath, format='jpeg', dpi=1000)
+
+#plt.savefig("graph.jpg", format='jpeg', dpi=600)
 plt.show()
