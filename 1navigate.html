@@ -50,12 +50,11 @@
 								</header>
 								<div class="image main"><img src="img/map_All_Point.JPG" alt="" /></div>
 								<center>
-								<form action="/" method="POST">
-									<label for="num1">เลือกจุดเริ่มต้น 1-21:</label>
-									<input type="number" id="startPoint" name="startPoint">
-									<br>
-									<label for="num2">เลือกจุดสิ้นสุด 1-21:</label>
-									<input type="number" id="endPoint" name="endPoint">
+								<form action="map.py" method="POST">
+									<label for="num1">ใส่จุดเริ่มต้น</label>
+									<input type="number" id="startPoint" name="startPoint" min="1" max="21">
+									<label for="num2">ใส่จุดสิ้นสุด</label>
+									<input type="number" id="endPoint" name="endPoint" min="1" max="21">
 									<br><br>
 									<input type="submit" value="navigate">
 								</center>
