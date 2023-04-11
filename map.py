@@ -38,21 +38,21 @@ G.add_edge(1, 2, weight = 58)#, weight=4
 G.add_edge(1, 3, weight = 62)
 G.add_edge(1, 18, weight = 54)
 
-G.add_edge(2, 1)
+G.add_edge(2, 1, weight = 58)
 G.add_edge(2, 3, weight = 10)
-G.add_edge(2, 4)
+G.add_edge(2, 4, weight = 30)
 G.add_edge(2, 16, weight = 54)# เนื่องจากเป็นเส้นทางขึ้นเขาใช้ความเร็วได้ไม่เต็มที่จึงบวกเพิ่ม 5 กม. 
-G.add_edge(2, 17)
-G.add_edge(2, 18)
+G.add_edge(2, 17, weight = 20)
+G.add_edge(2, 18, weight = 36)
 
-G.add_edge(3, 1)
-G.add_edge(3, 2)
-G.add_edge(3, 4)
-G.add_edge(3, 5)
+G.add_edge(3, 1, weight = 62)
+G.add_edge(3, 2, weight = 10)
+G.add_edge(3, 4, weight = 27)
+G.add_edge(3, 5, weight = 78)
 
 G.add_edge(4, 2, weight = 30)
 G.add_edge(4, 3, weight = 27)
-G.add_edge(4, 5)
+G.add_edge(4, 5, weight = 69)
 
 G.add_edge(5, 3, weight = 78)
 G.add_edge(5, 4, weight = 69)
@@ -60,26 +60,26 @@ G.add_edge(5, 6, weight = 17)
 
 G.add_edge(6, 7, weight = 26)
 
-G.add_edge(7, 8)
-G.add_edge(7, 9)
-G.add_edge(7, 12)
+G.add_edge(7, 8, weight = 42)
+G.add_edge(7, 9, weight = 34)
+G.add_edge(7, 12, weight = 153)
 
 G.add_edge(8, 7, weight = 42)
-G.add_edge(8, 15)
+G.add_edge(8, 15, weight = 32)
 
 G.add_edge(9, 7, weight = 34)
-G.add_edge(9, 10)
-G.add_edge(9, 11)
-G.add_edge(9, 12)
+G.add_edge(9, 10, weight = 46)
+G.add_edge(9, 11, weight = 60)
+G.add_edge(9, 12, weight = 120)
 
 G.add_edge(10, 9, weight = 46)
-G.add_edge(10, 11)
-G.add_edge(10, 13)
-G.add_edge(10, 14)
+G.add_edge(10, 11, weight = 74)
+G.add_edge(10, 13, weight = 64)
+G.add_edge(10, 14, weight = 60)
 
 G.add_edge(11, 9, weight = 60)
 G.add_edge(11, 10, weight = 74)
-G.add_edge(11, 13)
+G.add_edge(11, 13, weight = 56)
 
 G.add_edge(12, 7, weight = 153)
 G.add_edge(12, 9, weight = 120)
@@ -90,28 +90,28 @@ G.add_edge(13, 14, weight = 58)
 
 G.add_edge(14, 10, weight = 60)
 G.add_edge(14, 13, weight = 58)
-G.add_edge(14, 15)
-G.add_edge(14, 21)
+G.add_edge(14, 15, weight = 23)
+G.add_edge(14, 21, weight = 78)
 
 G.add_edge(15, 8, weight = 32)
 G.add_edge(15, 14, weight = 23)
-G.add_edge(15, 16)
+G.add_edge(15, 16, weight = 37)
 
-G.add_edge(16, 2)
+G.add_edge(16, 2, weight = 54)
 G.add_edge(16, 15, weight = 37)# เนื่องจากเป็นเส้นทางขึ้นเขาใช้ความเร็วได้ไม่เต็มที่จึงบวกเพิ่ม 5 กม. 
 
 G.add_edge(17, 2, weight = 20)
-G.add_edge(17, 18)
+G.add_edge(17, 18, weight = 25)
 
-G.add_edge(18, 1)
+G.add_edge(18, 1, weight = 54)
 G.add_edge(18, 2, weight = 36)
 G.add_edge(18, 17, weight = 25)
-G.add_edge(18, 19)
-G.add_edge(18, 21)
+G.add_edge(18, 19, weight = 13)
+G.add_edge(18, 21, weight = 41)
 
 G.add_edge(19, 18, weight = 13)
-G.add_edge(19, 20)
-G.add_edge(19, 21)
+G.add_edge(19, 20, weight = 10)
+G.add_edge(19, 21, weight = 40)
 
 G.add_edge(20, 19, weight = 10)
 
