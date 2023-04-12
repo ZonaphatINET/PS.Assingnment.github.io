@@ -186,8 +186,6 @@ labels = nx.get_edge_attributes(G,'weight')
 nx.draw_networkx_edge_labels(G,pos,edge_labels=labels)
 #plt.show()
 
-
-
 # ระบุจุดเริ่มและสิ้นสุด
 startPoint = int(input("Enter start point:"))
 endPoint = int(input("Enter end point:"))
