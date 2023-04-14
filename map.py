@@ -184,9 +184,7 @@ pos = {1: (-3.18, -3.74),
 nx.draw(G, pos, with_labels=True, node_color=[color_map[node] for node in G.nodes()])
 labels = nx.get_edge_attributes(G,'weight')
 nx.draw_networkx_edge_labels(G,pos,edge_labels=labels)
-#plt.show()
-
-
+plt.show()
 
 # ระบุจุดเริ่มและสิ้นสุด
 startPoint = int(input("Enter start point:"))
